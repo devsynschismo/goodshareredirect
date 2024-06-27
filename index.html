@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goodshare</title>
+  </head>
+  <body>
+    <script>
+      (function () {
+        // Get the current URL
+        const currentUrl = window.location.href;
+
+        const urlObject = new URL(currentUrl);
+        const code = urlObject.searchParams.get('code');
+
+        // Construct the redirect URL with the code
+        const redirectUrl = `goodshare://?code=${code}`;
+
+        // Redirect to the desired URL
+        window.location.href = redirectUrl;
+      })();
+    </script>
+  </body>
+</html>
